@@ -47,7 +47,7 @@ Here’s a detailed section for your `README.md` describing the package structur
 - **shared/**: Provides reusable UI components, theming, and type definitions.
 - **routes/**: Centralizes route definitions for navigation.
 
-This structure supports modulsarity, scalability, and maintainability, following Clean Architecture and MVVM principles for Flutter development.
+This structure supports modularity, scalability, and maintainability, following Clean Architecture and MVVM principles for Flutter development.
 
 ## Starting the project
 1. Clone the repository
