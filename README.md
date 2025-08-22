@@ -48,3 +48,25 @@ Here’s a detailed section for your `README.md` describing the package structur
 - **routes/**: Centralizes route definitions for navigation.
 
 This structure supports modulsarity, scalability, and maintainability, following Clean Architecture and MVVM principles for Flutter development.
+
+## Starting the project
+1. Clone the repository
+   ```bash
+   git clone
+    ```
+2. Navigate to the project directory 
+   ```bash
+   cd flutter_core_clean_mvvm
+   ```
+3. Install dependencies
+   ```bash
+   flutter pub get
+   ```
+4. For code generation (models, localization, etc.), run:
+   ```bash
+   flutter pub run build_runner build --delete-conflicting-outputs
+   ```
+5. Run the app
+   ```bash
+    flutter run -t lib/main_dev.dart
+    ```
