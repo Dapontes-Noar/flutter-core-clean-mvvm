@@ -54,6 +54,7 @@ jobs:
 
       - name: Run unit & widget tests
         run: |
+          mkdir -p ci-artifacts
           flutter test --coverage --machine > ci-artifacts/flutter_test_machine_output.json
         env:
           FLUTTER_TEST_TIMEOUT: 300000
