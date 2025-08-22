@@ -5,6 +5,7 @@
 .packages
 build/
 pubspec.lock
+*.config.dart
 
 # Android/Java/Kotlin/Gradle
 android/.gradle/
