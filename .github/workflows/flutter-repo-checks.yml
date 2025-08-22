@@ -44,8 +44,6 @@ jobs:
       - name: Generate code (build_runner)
         # runs code generation: hive adapters, json_serializable, etc.
         run: flutter pub run build_runner build --delete-conflicting-outputs
-        # If you prefer a faster incremental build on CI use `build --delete-conflicting-outputs -- -v`
-        # or for a continuous watch (not recommended in CI): `watch`
 
       - name: Dart format check
         # fails the job if code is not formatted
@@ -54,20 +52,11 @@ jobs:
       - name: Static analysis
         run: flutter analyze
 
-      - name: Run unit & widget tests (with coverage)
-        # generate coverage files in /coverage
+      - name: Run unit & widget tests
         run: |
-          flutter test --coverage --reporter expanded || (echo "flutter test exit code: $?" && false)
+          flutter test --coverage --machine > ci-artifacts/flutter_test_machine_output.json
         env:
-          # ensure Flutter test runs in headless for widget tests
           FLUTTER_TEST_TIMEOUT: 300000
-
-      - name: Save test log
-        if: always()
-        run: |
-          mkdir -p ci-artifacts
-          # save last test output if present
-          flutter test --no-retry --machine > ci-artifacts/flutter_test_machine_output.json || true
 
       - name: Upload coverage artifact
         if: always()
