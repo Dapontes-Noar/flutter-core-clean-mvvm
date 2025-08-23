@@ -9,9 +9,6 @@ class DioClient {
   final Dio _dio;
 
   DioClient(this._dio, {List<Interceptor>? interceptors}) {
-    if (!_dio.interceptors.any((i) => i is LoggerInterceptor)) {
-      _dio.interceptors.add(LoggerInterceptor(dio: _dio));
-    }
     if (interceptors != null) {
       _dio.interceptors.addAll(interceptors);
     }

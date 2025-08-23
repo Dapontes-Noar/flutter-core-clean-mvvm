@@ -15,7 +15,7 @@ abstract class RegisterModule {
       responseType: ResponseType.json,
     );
     final dio = Dio(options);
-    dio.interceptors.add(LoggerInterceptor(dio: dio));
+    dio.interceptors.add(LoggerInterceptor());
     return dio;
   }
 }

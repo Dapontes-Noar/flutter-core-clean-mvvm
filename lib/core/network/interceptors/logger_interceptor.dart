@@ -2,18 +2,15 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 
 class LoggerInterceptor extends Interceptor {
-  final Dio dio;
-
-  LoggerInterceptor({required this.dio});
+  LoggerInterceptor();
 
   @override
   void onRequest(
-      RequestOptions options,
-      RequestInterceptorHandler handler,
-      ) async {
+    RequestOptions options,
+    RequestInterceptorHandler handler,
+  ) async {
     if (kDebugMode) {
-      final buffer =
-      StringBuffer()
+      final buffer = StringBuffer()
         ..writeln('--- [DIO REQUEST] ---')
         ..writeln('URI: ${options.uri}')
         ..writeln('Method: ${options.method}')
@@ -30,8 +27,7 @@ class LoggerInterceptor extends Interceptor {
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) async {
     if (kDebugMode) {
-      final buffer =
-      StringBuffer()
+      final buffer = StringBuffer()
         ..writeln('--- [DIO RESPONSE] ---')
         ..writeln('URI: ${response.requestOptions.uri}')
         ..writeln('Status Code: ${response.statusCode}')
@@ -46,8 +42,7 @@ class LoggerInterceptor extends Interceptor {
   @override
   void onError(DioException err, ErrorInterceptorHandler handler) async {
     if (kDebugMode) {
-      final buffer =
-      StringBuffer()
+      final buffer = StringBuffer()
         ..writeln('--- [DIO ERROR] ---')
         ..writeln('URI: ${err.requestOptions.uri}')
         ..writeln('Message: ${err.message}')
