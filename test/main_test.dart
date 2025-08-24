@@ -1,17 +1,13 @@
 // test/main_test.dart
 import 'package:flutter/material.dart';
+import 'package:flutter_core_clean_mvvm/routes/app_router.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_core_clean_mvvm/main.dart';
 import 'package:go_router/go_router.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
-  final GoRouter router = GoRouter(
-    initialLocation: '/home',
-    routes: [
-      GoRoute(path: '/home', builder: (context, state) => const MyHomePage()),
-    ],
-  );
+  final GoRouter router = buildAppRouter();
   testWidgets('App renders MyHomePage and increments counter', (
     WidgetTester tester,
   ) async {
