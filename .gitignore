@@ -5,7 +5,6 @@
 .packages
 build/
 pubspec.lock
-*.config.dart
 
 # Android/Java/Kotlin/Gradle
 android/.gradle/
@@ -35,7 +34,6 @@ env/
 venv/
 *.egg-info/
 dist/
-build/
 
 # IDEs
 .idea/
@@ -44,3 +42,7 @@ build/
 # Misc
 .DS_Store
 *.log
+
+#auto generated files
+*.config.dart
+*.g.dart
